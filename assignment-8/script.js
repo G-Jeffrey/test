@@ -1,6 +1,6 @@
 let netScore = 0, knickScore = 0, len = 0;
 
-function add(){
+add = () => {
     // const tr = document.createElement("TR"), th = document.createElement("TH"), td = document.createElement("TH");
     const choices = document.getElementsByTagName('input');
     if(choices[0].value.trim()==="" || choices[1].value.trim()==="") return;
@@ -23,9 +23,9 @@ function add(){
     document.getElementById("knicksAverage").innerHTML=(knickScore/len).toFixed(2);
     let result;
     if(netScore>knickScore){
-        result = "Nets had more points by the Knicks by " + (netScore-knickScore)+".";
+        result = "Nets is ahead by " + (netScore-knickScore)+" points.";
     }else if(netScore<knickScore){
-        result = "Knicks had more points by the Nets by " + (knickScore-netScore)+".";
+        result = "Knicks is ahead by " + (knickScore-netScore)+" points.";
     }else{
         result = "Both teams had the same score at " + netScore +".";
     }

@@ -1,4 +1,4 @@
-function tip(){
+tip = () => {
     const choices = document.getElementsByTagName('input');
     // checking if the first input not an a non empty string
     if(choices[0].value==="") return;
@@ -13,7 +13,6 @@ function tip(){
             tip=(mealCost*tipPer[1].value).toFixed(2);
             break;
     }
-    console.log(tip);
     document.getElementById("tip").innerHTML=tip;
     document.getElementById("total").innerHTML= (parseFloat(tip)+parseFloat(mealCost)).toFixed(2);
 }

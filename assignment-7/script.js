@@ -7,8 +7,8 @@ $(function(){
     });
 });
 function compare(){
-    var c = document.getElementsByTagName('input');
-    var b = false
+    let c = document.getElementsByTagName('input');
+    let b = false;
     for (i = 0; i < c.length; i++) {
         if(c[i].value.trim()==="") b = true;
     }
