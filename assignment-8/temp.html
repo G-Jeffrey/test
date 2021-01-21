@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempature Calulator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="temp.js"></script>
+</head>
+<body>
+    <div class="container" onsubmit="event.preventDefault();">
+        <form id="form" name="form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+                <label>Tempature: </label>
+                <input type="number" name ="price" placeholder="100&deg;" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Convert to:</label>
+                <input type="radio" name="type" value="Fahrenheit" required>&nbsp;<label>Fahrenheit</label>
+                <input type="radio" name="type" value="Celcius">&nbsp;<label> Celcius</label>
+            </div>
+            <button class="btn btn-default" onclick="convert()" id="submit">Convert</button>
+
+        </form>
+        <br>
+        <h4><div id="result"></div></h4>
+        <br>
+    </div>
+    <div class="btn"><a href="index.html">Nets Vs Knicks</a></div>
+    <div class="btn"><a href="tip.html">Tip Calculator</a></div>
+</body>

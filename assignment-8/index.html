@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container" onsubmit="event.preventDefault();">
+        <form id="form" name="form">
+            
+            <div class="form-group">
+                <label for="nets">Nets' Scores</label>
+                <input type="number" name ="score" placeholder="100">
+            </div>
+            <div class="form-group table-striped">
+                <label for="knicks"> Knicks' Scores</label>
+                <input type="number" name ="score" placeholder="100">
+            </div>
+            <button class="btn btn-default" onclick="add()" id="submit">Add</button>
+        </form>
+        <br>
+        <div class="container">
+            <table class="table table-striped" id="myTable">
+                <tr>
+                    <th></th>
+                    <th>Nets</th>
+                    <th>Knicks</th>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td id="netsTotal"></th>
+                    <td id="knicksTotal"></th>
+                </tr>
+                <tr>
+                    <th>Average</th>
+                    <td id="netsAverage"></th>
+                    <td id="knicksAverage"></th>
+                </tr>
+            </table>
+            <div class="container" id="result"></div>
+        </div>
+    </div>
+    <br>
+    <div class="btn"><a href="tip.html">Tip Calculator</a></div>
+    <div class="btn"><a href="temp.html">Tempature Converter</a></div>
+</body>
+</html>
