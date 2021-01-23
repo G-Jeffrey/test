@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+            <div class="display">
+            <div class="col"> Lives: <span id="lives"></span></div>
+            <div class="col"> High Score: <span id="highScore"></span></div>
+            <div class="col"> Current Score: <span id="score"></span></div>
+        </div>
+        <input id="guess" type="number" placeholder="1-100">
+        <input type="button" onclick="clicked()" value="Submit">
+    </div>
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <b>Previous guesses</b>
+        </li>
+        <span id="prevGuesses"></span>
+    </ul>
+    <script src="script.js"></script>
+</body>
+</html>
