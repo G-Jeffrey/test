@@ -1,5 +1,3 @@
-// Alright got it
-// thank you
 randNum = (x,y) => {
     return Math.floor(Math.random()*y+x);
 }
@@ -11,6 +9,7 @@ document.getElementById("score").innerHTML = score;
 clicked = () => {
     let guess = parseInt(document.getElementById('guess').value);
     if(isNaN(guess)){
+        changeGuess("N/A");
         alert("No Input");
         return;
     }
@@ -21,27 +20,32 @@ clicked = () => {
         }
         return;
     }
-    
+    changeGuess(guess);
     if(guess==answer){
         answer = randNum(1,100);
         score++;
-        defaultbg("green");
         console.log(answer);
         document.getElementById("score").innerHTML = score;
         document.getElementById("highScore").innerHTML = Math.max(highScore,score);
-        document.getElementById('guess').value="";
+        defaultbg("green");
+        guess+=". Correct!";
+        prependGuess(guess,"green");
         return;
     }else if(guess>answer){
         guess+=". Too high!";
     }else{
         guess+= ". Too low!";
     }
-    defaultbg("red");
     lives--;
+    defaultbg("red");
     document.getElementById("lives").innerHTML = lives;
-    prependGuess(guess);
+    prependGuess(guess,"red");
+    if(lives===0){
+
+    }
 }
 reset = () => {
+    changeGuess("??");
     answer = randNum(1,100);
     lives = 10;
     score = 0;
@@ -50,15 +54,19 @@ reset = () => {
     document.getElementById("prevGuesses").innerHTML ="";
 }
 defaultbg = (color) => {
-    document.body.style.backgroundColor = color;
-    if(color!="white"){
-        setTimeout("defaultbg('white')",500);
+    document.getElementById("body").style.backgroundColor = color;
+    if(color!="transparent"){
+        setTimeout("defaultbg('transparent')",1000);
     }
 }
-prependGuess = (x) => {
+prependGuess = (x, color) => {
     let item = document.createElement("li");
     let text = document.createTextNode(x);
     item.classList.add("list-group-item");
+    item.classList.add(color);
     item.appendChild(text);
     document.getElementById("prevGuesses").prepend(item);
+}
+changeGuess = (guess) =>{
+    document.getElementById("prev").innerHTML = guess;
 }

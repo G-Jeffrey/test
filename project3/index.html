@@ -6,24 +6,121 @@
     <title>Project 3</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1ed23d32e7.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-image: linear-gradient(to top right, rgb(247, 176, 220), rgb(241, 209, 229), rgb(233, 231, 113));
+            background-repeat: no-repeat;
+            height: 130vh;
+            margin:0;
+            font-size: 3vh;
+        }
+        #body{
+            position: absolute;
+            height: 130vh;
+            width:100%;
+            text-align: center;
+            align-items: center;
+            z-index: 0;
+        }
+        .red{
+            background-color:rgb(252, 121, 121);
+        }
+        .green{
+            background-color:rgb(120, 248, 137);
+        }
+        #guess{
+            background-color:rgba(0,0,0,0);
+        }
+        hr{
+            border: none;
+            height: 0.5vh;
+            background-color: white;
+        }
+        .prevGuess{
+            width:100%;
+            margin-top: 5vh;
+            margin-bottom: 10vh;
+        }
+        .line{
+            width:100%;
+            height: .5vh;
+            background-color: white;
+
+        }
+        .block{
+            position: absolute;
+            width:17.8vh;
+            height: 10vh;
+            background-color: white;
+            top:8%;
+            left: 43%;
+        }
+        .guess{
+            padding-top: 1.5vh;
+            overflow: hidden;
+            text-align: center;
+            font-size: 4vh;
+        }
+        /* @media (min-width: 768px) {
+            .guess{
+                font-size: 20px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .guess{
+                font-size: 30px;
+            }
+        } */
+        .btn{
+            font-size:3vh;
+            padding-top:1vh;
+            padding-bottom:1vh;
+            padding-left:3vh;
+            padding-right:3vh;
+            border-radius: 2vh;
+        }
+        .reset{
+            float:right;
+            margin-top:-7vh;
+        }
+        .display{
+            padding-top: 5vh;
+            padding-left:10vh;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-            <div class="display">
-            <div class="col"> Lives: <span id="lives"></span></div>
-            <div class="col"> High Score: <span id="highScore"></span></div>
-            <div class="col"> Current Score: <span id="score"></span></div>
+    
+    <span id="body">
+        <div class="guess">Previous Guess</div> 
+        <button onclick="reset()" class="btn btn-success reset">Reset</button>
+    <div class="prevGuess">
+        
+        <div class="line"></div>
+        <div class="block">
+            <div class="guess" id="prev">??</div>
         </div>
-        <input id="guess" type="number" placeholder="1-100">
-        <input type="button" onclick="clicked()" value="Submit">
+    </div>
+    <div class="container col-xs-6 col-md-6 col-lg-3">
+        <div class="display">
+            <div class="col"><i class="far fa-heart"></i> Lives: <span id="lives"></span></div>
+            <div class="col"><i class="fas fa-star"></i>High Score: <span id="highScore"></span></div>
+            <div class="col"><i class="far fa-star"></i>Current Score: <span id="score"></span></div>
+        </div>
+        <div class="col-md-6 col-sm-6 display"><input id="guess" type="number" placeholder="1-100" class="form-control">
+        <input type="button" onclick="clicked()" value="Submit" class="btn btn-success"></ div>
     </div>
     <br>
-    <ul class="list-group">
+    <ul class="list-group col-xs-6  col-md-6 col-lg-9">
         <li class="list-group-item">
             <b>Previous guesses</b>
         </li>
-        <span id="prevGuesses"></span>
+        <span id="prevGuesses" style="font-color:white;"></span>
     </ul>
     <script src="script.js"></script>
+</span>
 </body>
 </html>
